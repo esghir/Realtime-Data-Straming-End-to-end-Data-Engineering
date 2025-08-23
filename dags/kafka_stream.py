@@ -35,6 +35,10 @@ def format_data(res):
     """Formats the raw API response into a cleaner dictionary."""
     data = {}
     location = res['location']
+    
+    # L'ISLA?: Zedt had l ster bach n'akhdo l'UUID men l'API
+    data['id'] = res['login']['uuid']
+    
     data['first_name'] = res['name']['first']
     data['last_name'] = res['name']['last']
     data['gender'] = res['gender']
